@@ -1,11 +1,15 @@
-while True:
+def checkPalindrome(word : str):
 
-    word = input('Введите слово, которое вы бы хотели проверить, является ли оно палиндромом, или нет: ')
+    word_flip = word.lower()[::-1]
 
-    word_flip = word[::-1]
+    if word.lower().replace(" ", "") != word.lower():
+        return "Напишите без пробелов"
 
-    if word == word_flip:
-        print('Это палиндром!')
+    if word.lower() == word_flip:
+        return True
 
     else:
-        print('Это не палиндром :(')
+        return False
+    
+while True:
+    print(checkPalindrome(input('Введите слово, которое вы бы хотели проверить, является ли оно палиндромом, или нет: ')))
